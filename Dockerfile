@@ -6,7 +6,7 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 # Copy app files
-COPY ["package.json", "package-lock.json", "./"]
+COPY ["package.json", "./"]
 
 RUN npm i 
 

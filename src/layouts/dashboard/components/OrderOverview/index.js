@@ -71,7 +71,7 @@ function OrdersOverview() {
                 icon={<FaBell size="16px" color={palette.info.main} />}
                 title="Capteur de visibilité "
                 dateTime={
-                  "Vitesse :  " +
+                  "Visibilité a :  " +
                   meteorologicalData.VisibleValue +
                   "m " +
                   " Status :  " +
@@ -88,7 +88,7 @@ function OrdersOverview() {
                 icon={<FaBell size="16px" color={palette.info.main} />}
                 title="Capteur de précipitation "
                 dateTime={
-                  "Vitesse :  " +
+                  "Précipitation a :  " +
                   meteorologicalData.PrecValue +
                   "mm " +
                   " Status :  " +
@@ -121,7 +121,7 @@ function OrdersOverview() {
                 icon={<FaBell size="16px" color={palette.info.main} />}
                 title="Capteur de tempétrature interne "
                 dateTime={
-                  "Fenetre Passager :  " +
+                  "Température interne :  " +
                   meteorologicalData.TempValue +
                   " °C " +
                   meteorologicalData.TempStatus
@@ -154,7 +154,7 @@ function OrdersOverview() {
                 icon={<FaBell size="16px" color={palette.info.main} />}
                 title="Capteur de neige "
                 dateTime={
-                  "Vitesse :  " +
+                  "Neige :  " +
                   meteorologicalData.NeigeValue +
                   " cm " +
                   " Status :  " +

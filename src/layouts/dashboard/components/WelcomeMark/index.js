@@ -32,7 +32,7 @@ const WelcomeMark = () => {
             console.log("error");
           }
         );
-    }, 2000);
+    }, 500000);
     return () => clearInterval(interval3);
   }, []);
   return (

@@ -36,7 +36,7 @@ function OrdersOverview() {
             console.log("error");
           }
         );
-    }, 2000);
+    }, 500000);
     return () => clearInterval(interval3);
   }, []);
 

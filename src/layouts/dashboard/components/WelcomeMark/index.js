@@ -19,7 +19,7 @@ const WelcomeMark = () => {
   // Poll the server for new data.
   useEffect(() => {
     const interval3 = setInterval(() => {
-      fetch("http://localhost:1880/MeteorologicalState")
+      fetch("http://192.168.0.168:1880/MeteorologicalState")
         .then((res) => res.json())
         .then(
           (result) => {

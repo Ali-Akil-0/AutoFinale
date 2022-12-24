@@ -49,30 +49,27 @@ function Dashboard() {
   const [drowsinessDetection, setDrowsinessDetection] = useState(true);
 
   useEffect(() => {
-    
     const interval3 = setInterval(() => {
-      if(drowsinessDetection){
-      fetch("http://localhost:1880/data")
-        .then((res) => res.json())
-        .then(
-          (result) => {
-            setConductorSecurityData(result);
-            console.log(result);
-            if (result.status == "somnolent") {
-              if (result.drowsiness == "yes") {
-                
+      if (drowsinessDetection) {
+        fetch("http://192.168.0.168:1880/data")
+          .then((res) => res.json())
+          .then(
+            (result) => {
+              setConductorSecurityData(result);
+              console.log(result);
+              if (result.status == "somnolent") {
+                if (result.drowsiness == "yes") {
                   setDrowsinessAlerte(true);
-                
+                }
               }
+            },
+            (error) => {
+              console.log("error");
             }
-          },
-          (error) => {
-            console.log("error");
-          }
-        );
+          );
       }
     }, 10000);
-    
+
     return () => clearInterval(interval3);
   }, []);
 
@@ -112,8 +109,8 @@ function Dashboard() {
               {conductorSecurityData.drowsiness == "yes" ? (
                 <>
                   {conductorSecurityData.NbrDrowsiness != 3 ? (
-
-                    <>{console.log("heeeeeere")}
+                    <>
+                      {console.log("heeeeeere")}
                       <Popup trigger={drowsinessAlerte} setTrigger={setDrowsinessAlerte}>
                         <IoIosWarning size="150px" color="yellow" />
                         <br />
@@ -125,7 +122,7 @@ function Dashboard() {
                       <Popup trigger={drowsinessAlerte} setTrigger={setDrowsinessAlerte}>
                         <IoIosWarning size="150px" color="red" />
                         <br />
-                        <hi > Automatic Breaking !!! </hi>
+                        <hi> Automatic Breaking !!! </hi>
                       </Popup>
                     </>
                   )}
@@ -141,8 +138,6 @@ function Dashboard() {
       ) : (
         <></>
       )}
-
-      
     </DashboardLayout>
   );
 }

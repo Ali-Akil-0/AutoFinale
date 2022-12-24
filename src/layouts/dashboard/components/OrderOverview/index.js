@@ -26,7 +26,7 @@ function OrdersOverview() {
   // Poll the server for new data.
   useEffect(() => {
     const interval3 = setInterval(() => {
-      fetch("http://localhost:1880/MeteorologicalState")
+      fetch("http://192.168.0.168:1880/MeteorologicalState")
         .then((res) => res.json())
         .then(
           (result) => {
@@ -65,154 +65,154 @@ function OrdersOverview() {
             }`}
         </style>
         <div className="fooDiv">
-        {meteorologicalData ? (
-          <>
-            <TimelineItem
-              icon={<FaBell size="16px" color={palette.info.main} />}
-              title="Capteur de visibilité "
-              dateTime={
-                "Vitesse :  " +
-                meteorologicalData.VisibleValue +
-                "m " +
-                " Status :  " +
-                meteorologicalData.VisibleStatus
-              }
-            />
-          </>
-        ) : (
-          <></>
-        )}
-        {meteorologicalData ? (
-          <>
-            <TimelineItem
-              icon={<FaBell size="16px" color={palette.info.main} />}
-              title="Capteur de précipitation "
-              dateTime={
-                "Vitesse :  " +
-                meteorologicalData.PrecValue +
-                "mm " +
-                " Status :  " +
-                meteorologicalData.PrecStatus
-              }
-            />
-          </>
-        ) : (
-          <></>
-        )}
-        {meteorologicalData ? (
-          <>
-            <TimelineItem
-              icon={<FaBell size="16px" color={palette.info.main} />}
-              title="Caméra des fenetres passagers "
-              dateTime={
-                "Fenetre Passager :  " +
-                meteorologicalData.FenetrePassager +
-                " Status :  " +
-                meteorologicalData.FenetreCamStatus
-              }
-            />
-          </>
-        ) : (
-          <></>
-        )}
-        {meteorologicalData ? (
-          <>
-            <TimelineItem
-              icon={<FaBell size="16px" color={palette.info.main} />}
-              title="Capteur de tempétrature interne "
-              dateTime={
-                "Fenetre Passager :  " +
-                meteorologicalData.TempValue +
-                " °C " +
-                meteorologicalData.TempStatus
-              }
-            />
-          </>
-        ) : (
-          <></>
-        )}
-        {meteorologicalData ? (
-          <>
-            <TimelineItem
-              icon={<FaBell size="16px" color={palette.info.main} />}
-              title="Capteur de vittesse de vent "
-              dateTime={
-                "Vitesse :  " +
-                meteorologicalData.VendValue +
-                "Km/h " +
-                " Status :  " +
-                meteorologicalData.VendStatus
-              }
-            />
-          </>
-        ) : (
-          <></>
-        )}
-        {meteorologicalData ? (
-          <>
-            <TimelineItem
-              icon={<FaBell size="16px" color={palette.info.main} />}
-              title="Capteur de neige "
-              dateTime={
-                "Vitesse :  " +
-                meteorologicalData.NeigeValue +
-                " cm " +
-                " Status :  " +
-                meteorologicalData.NeigeStatus
-              }
-            />
-          </>
-        ) : (
-          <></>
-        )}
+          {meteorologicalData ? (
+            <>
+              <TimelineItem
+                icon={<FaBell size="16px" color={palette.info.main} />}
+                title="Capteur de visibilité "
+                dateTime={
+                  "Vitesse :  " +
+                  meteorologicalData.VisibleValue +
+                  "m " +
+                  " Status :  " +
+                  meteorologicalData.VisibleStatus
+                }
+              />
+            </>
+          ) : (
+            <></>
+          )}
+          {meteorologicalData ? (
+            <>
+              <TimelineItem
+                icon={<FaBell size="16px" color={palette.info.main} />}
+                title="Capteur de précipitation "
+                dateTime={
+                  "Vitesse :  " +
+                  meteorologicalData.PrecValue +
+                  "mm " +
+                  " Status :  " +
+                  meteorologicalData.PrecStatus
+                }
+              />
+            </>
+          ) : (
+            <></>
+          )}
+          {meteorologicalData ? (
+            <>
+              <TimelineItem
+                icon={<FaBell size="16px" color={palette.info.main} />}
+                title="Caméra des fenetres passagers "
+                dateTime={
+                  "Fenetre Passager :  " +
+                  meteorologicalData.FenetrePassager +
+                  " Status :  " +
+                  meteorologicalData.FenetreCamStatus
+                }
+              />
+            </>
+          ) : (
+            <></>
+          )}
+          {meteorologicalData ? (
+            <>
+              <TimelineItem
+                icon={<FaBell size="16px" color={palette.info.main} />}
+                title="Capteur de tempétrature interne "
+                dateTime={
+                  "Fenetre Passager :  " +
+                  meteorologicalData.TempValue +
+                  " °C " +
+                  meteorologicalData.TempStatus
+                }
+              />
+            </>
+          ) : (
+            <></>
+          )}
+          {meteorologicalData ? (
+            <>
+              <TimelineItem
+                icon={<FaBell size="16px" color={palette.info.main} />}
+                title="Capteur de vittesse de vent "
+                dateTime={
+                  "Vitesse :  " +
+                  meteorologicalData.VendValue +
+                  "Km/h " +
+                  " Status :  " +
+                  meteorologicalData.VendStatus
+                }
+              />
+            </>
+          ) : (
+            <></>
+          )}
+          {meteorologicalData ? (
+            <>
+              <TimelineItem
+                icon={<FaBell size="16px" color={palette.info.main} />}
+                title="Capteur de neige "
+                dateTime={
+                  "Vitesse :  " +
+                  meteorologicalData.NeigeValue +
+                  " cm " +
+                  " Status :  " +
+                  meteorologicalData.NeigeStatus
+                }
+              />
+            </>
+          ) : (
+            <></>
+          )}
 
-        {meteorologicalData ? (
-          <>
-            <TimelineItem
-              icon={<FaBell size="16px" color={palette.info.main} />}
-              title="Chauffage de sieges "
-              dateTime={meteorologicalData.ChauffageDeSieges}
-            />
-          </>
-        ) : (
-          <></>
-        )}
+          {meteorologicalData ? (
+            <>
+              <TimelineItem
+                icon={<FaBell size="16px" color={palette.info.main} />}
+                title="Chauffage de sieges "
+                dateTime={meteorologicalData.ChauffageDeSieges}
+              />
+            </>
+          ) : (
+            <></>
+          )}
 
-        {meteorologicalData ? (
-          <>
-            <TimelineItem
-              icon={<FaBell size="16px" color={palette.info.main} />}
-              title="Chauffage des poignes des portes "
-              dateTime={meteorologicalData.Chauffagepoigneporte}
-            />
-          </>
-        ) : (
-          <></>
-        )}
-        {meteorologicalData ? (
-          <>
-            <TimelineItem
-              icon={<FaBell size="16px" color={palette.info.main} />}
-              title="Chauffage des essue-glaces "
-              dateTime={meteorologicalData.ChauffageEssueGlaces}
-            />
-          </>
-        ) : (
-          <></>
-        )}
-        {meteorologicalData ? (
-          <>
-            <TimelineItem
-              icon={<FaBell size="16px" color={palette.info.main} />}
-              title="Chauffage des coffres "
-              dateTime={meteorologicalData.ChauffageCoffres}
-            />
-          </>
-        ) : (
-          <></>
-        )}
+          {meteorologicalData ? (
+            <>
+              <TimelineItem
+                icon={<FaBell size="16px" color={palette.info.main} />}
+                title="Chauffage des poignes des portes "
+                dateTime={meteorologicalData.Chauffagepoigneporte}
+              />
+            </>
+          ) : (
+            <></>
+          )}
+          {meteorologicalData ? (
+            <>
+              <TimelineItem
+                icon={<FaBell size="16px" color={palette.info.main} />}
+                title="Chauffage des essue-glaces "
+                dateTime={meteorologicalData.ChauffageEssueGlaces}
+              />
+            </>
+          ) : (
+            <></>
+          )}
+          {meteorologicalData ? (
+            <>
+              <TimelineItem
+                icon={<FaBell size="16px" color={palette.info.main} />}
+                title="Chauffage des coffres "
+                dateTime={meteorologicalData.ChauffageCoffres}
+              />
+            </>
+          ) : (
+            <></>
+          )}
 
-        {/* <TimelineItem icon={<AdobeXD size="20px" />} title="New order #9583120" dateTime="17 DEC" /> */}
+          {/* <TimelineItem icon={<AdobeXD size="20px" />} title="New order #9583120" dateTime="17 DEC" /> */}
         </div>
       </VuiBox>
     </Card>

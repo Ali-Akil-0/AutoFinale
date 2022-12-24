@@ -31,7 +31,7 @@ import { useVisionUIController, setOpenConfigurator } from "context";
 
 export default function App() {
   const [controller, dispatch] = useVisionUIController();
-  const {  direction, layout, openConfigurator } = controller;
+  const { direction, layout, openConfigurator } = controller;
   const [rtlCache, setRtlCache] = useState(null);
   const { pathname } = useLocation();
 
@@ -72,40 +72,11 @@ export default function App() {
       return null;
     });
 
-  const configsButton = (
-    <VuiBox
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      width="3.5rem"
-      height="3.5rem"
-      bgColor="info"
-      shadow="sm"
-      borderRadius="50%"
-      position="fixed"
-      right="2rem"
-      bottom="2rem"
-      zIndex={99}
-      color="white"
-      sx={{ cursor: "pointer" }}
-      onClick={handleConfiguratorOpen}
-    >
-      <Icon fontSize="default" color="inherit">
-        settings
-      </Icon>
-    </VuiBox>
-  );
-
   return direction === "rtl" ? (
     <CacheProvider value={rtlCache}>
       <ThemeProvider theme={themeRTL}>
         <CssBaseline />
-        {layout === "dashboard" && (
-          <>
-            <Configurator />
-            {configsButton}
-          </>
-        )}
+
         {layout === "vr" && <Configurator />}
         <Switch>
           {getRoutes(routes)}
@@ -116,12 +87,6 @@ export default function App() {
   ) : (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {layout === "dashboard" && (
-        <>
-          <Configurator />
-          {configsButton}
-        </>
-      )}
       {layout === "vr" && <Configurator />}
       <Switch>
         {getRoutes(routes)}
